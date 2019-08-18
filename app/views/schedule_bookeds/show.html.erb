@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient name:</strong>
+  <%= @schedule_booked.patient_name %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @schedule_booked.schedule.schedule_date.strftime("%d-%m-%Y %H:%M:%S") %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @schedule_booked.doctor.name %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_booked_path(@schedule_booked) %> |
+<%= link_to 'Back', schedule_bookeds_path %>

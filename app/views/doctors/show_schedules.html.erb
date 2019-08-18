@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @doctor.name %>
+</p>
+
+<p>
+  <strong>Specialist:</strong>
+  <%= @doctor.specialist.name %>
+</p>
+
+<p>
+  <strong>Hospital:</strong>
+  <%= @doctor.hospital.name %>
+</p>
+
+<p>
+  <strong>Patient Schedule list:</strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Schedule Date</th>
+        <th>Booked Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @doctor.schedule_bookeds.each do |s| %>
+        <tr>
+          <td><%= s.patient_name %></td>
+          <td><%= s.schedule.schedule_date.strftime("%d-%m-%Y %H:%M:%S") %></td>
+          <td><%= s.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+<%= link_to 'Back', doctors_path %>

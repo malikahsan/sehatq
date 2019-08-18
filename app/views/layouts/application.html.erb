@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sehatq</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <div>
+        <%= link_to "Dashboard", root_path %> |
+        <%= link_to "Hospitals", hospitals_path %> |
+        <%= link_to "Specialists", specialists_path %> |
+        <%= link_to "Doctors", doctors_path %> |
+        <%= link_to "Schedules", schedules_path %> |
+        <%= link_to "Schedules Booked", schedule_bookeds_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
+
+    <div>
+      <%= yield %>
+    </div>
+  </body>
+</html>

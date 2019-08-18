@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Schedule Bookeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient name</th>
+      <th>Schedule</th>
+      <th>Doctor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedule_bookeds.each do |schedule_booked| %>
+      <tr>
+        <td><%= schedule_booked.patient_name %></td>
+        <td><%= schedule_booked.schedule.schedule_date.strftime("%d-%m-%Y %H:%M:%S") %></td>
+        <td><%= schedule_booked.doctor.name %></td>
+        <td><%= link_to 'Show', schedule_booked %></td>
+        <td><%= link_to 'Edit', edit_schedule_booked_path(schedule_booked) %></td>
+        <td><%= link_to 'Destroy', schedule_booked, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Schedule Booked', new_schedule_booked_path %>
