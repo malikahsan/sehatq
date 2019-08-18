@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-# mekari_project
+# sehatq_project
 * clone this project with ssh or https
 * bundle install ("gem install bundler" if on gemset not install)
 * Change credential account on database.yml with your mysql account
